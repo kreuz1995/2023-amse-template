@@ -39,7 +39,12 @@ The above contains longitude and latitude (WGS84, EPSG:4326) of traffic sign loc
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
 
-1. Example Issue [#1][i1]
-2. ...
+1. Dataset collection and cleaning [#1][i1]
+2. Data exploration and visualization [#2][i2]
+3. Statistical analysis [#3][i3]
+4. Development of intervention strategies [#4][i4]
 
-[i1]: https://github.com/jvalue/2023-amse-template/issues/1
+[i1]: https://github.com/kreuz1995/2023-amse-template/issues/1
+[i2]: https://github.com/kreuz1995/2023-amse-template/issues/2
+[i3]: https://github.com/kreuz1995/2023-amse-template/issues/3
+[i4]: https://github.com/kreuz1995/2023-amse-template/issues/4
