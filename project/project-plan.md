@@ -37,12 +37,11 @@ The above contains longitude and latitude (WGS84, EPSG:4326) of traffic sign loc
 ## Work Packages
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
-Data collection and cleaning - In this work package, the datasets on road accidents and traffic signs in Berlin will be collected and cleaned to ensure their accuracy and consistency.
-Data exploration and visualization - In this work package, exploratory data analysis techniques will be used to gain insights into the relationships between traffic signs and road accidents in Berlin. 
-Statistical analysis - In this work package, statistical techniques such as regression analysis will be used to model the relationship between traffic signs and road accidents, and to identify any significant correlations between specific types of signs and accidents.
-Development of intervention strategies - In this work package, the insights gained from the previous work packages will be used to develop targeted intervention strategies aimed at reducing the number of road accidents in Berlin.
 
-1. Example Issue [#1][i1]
+
+1.  Data collection and cleaning [#1][i14]
+2.  Example Issue [#1][i1]
+3.  Example Issue [#1][i1]
 
 
 [i1]: https://github.com/jvalue/2023-amse-template/issues/1
