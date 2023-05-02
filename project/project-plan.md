@@ -3,29 +3,46 @@
 ## Summary
 
 <!-- Describe your data science project in max. 5 sentences. -->
-This projects analyzes XY.
+This project analyzes the relationship between traffic signs and road accidents in Berlin in 2020.
+The study aims to identify which types of traffic signs are most commonly associated with road accidents, and whether certain signs are overrepresented at accident sites.
+The findings of this study could be used to inform the development of targeted traffic safety measures aimed at reducing the number of accidents and injuries on Berlin's roads.
+The ultimate goal is to provide actionable insights to improve traffic safety in Berlin.
+
 
 ## Rationale
 
 <!-- Outline the impact of the analysis, e.g. which pains it solves. -->
-The analysis helps XY to do YZ.
+The analysis of the relationship between traffic signs and road accidents in Berlin in 2020 has the potential to improve traffic safety measures in the city.
+By identifying which types of signs are most commonly associated with accidents, measures could be taken such as improving the visibility of certain signs, redesigning intersections or roads with a high incidence of accidents, and increasing awareness of particular road hazards. 
+Ultimately, this could lead to a reduction in the number of accidents and injuries on the roads, and an overall improvement in traffic safety in Berlin.
 
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: ExampleSource
-* Metadata URL: https://mobilithek.info/offers/-6901989592576801458
-* Data URL: https://raw.githubusercontent.com/od-ms/radverkehr-zaehlstellen/main/100035541/2019-01.csv
+### Datasource-3502300782194642410: Strassenverkehrsunfälle nach Unfallort in Berlin 2020
+* Metadata URL: https://mobilithek.info/offers/-3502300782194642410
+* Data URL: https://www.statistik-berlin-brandenburg.de/opendata/AfSBBB_BE_LOR_Strasse_Strassenverkehrsunfaelle_2020_Datensatz.csv
 * Data Type: CSV
 
-Short description.
+The above dataset contains road traffic accidents by accident location with street name, GPS coordinates and LOR planning area in Berlin 2020; Accident month, weekday, hour, accident type and category.
+
+### Datasource-7259270924735185334: Traffic Signs: Berlin, 2020
+* Metadata URL: https://mobilithek.info/offers/-7259270924735185334
+* Data URL: https://www.mcloud.de/downloads/mcloud/722EDEC3-38BA-4FE2-B087-18C0434CA34E/traffic_sign_analysis.json
+* Data Type: JSON
+
+The above contains longitude and latitude (WGS84, EPSG:4326) of traffic sign locations and their types in 43 categories, in Berlin in 2020.
 
 ## Work Packages
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
+Data collection and cleaning - In this work package, the datasets on road accidents and traffic signs in Berlin will be collected and cleaned to ensure their accuracy and consistency.
+Data exploration and visualization - In this work package, exploratory data analysis techniques will be used to gain insights into the relationships between traffic signs and road accidents in Berlin. 
+Statistical analysis - In this work package, statistical techniques such as regression analysis will be used to model the relationship between traffic signs and road accidents, and to identify any significant correlations between specific types of signs and accidents.
+Development of intervention strategies - In this work package, the insights gained from the previous work packages will be used to develop targeted intervention strategies aimed at reducing the number of road accidents in Berlin.
 
 1. Example Issue [#1][i1]
-2. ...
+
 
 [i1]: https://github.com/jvalue/2023-amse-template/issues/1
