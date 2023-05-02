@@ -44,5 +44,5 @@ The above contains longitude and latitude (WGS84, EPSG:4326) of traffic sign loc
 3.  Example Issue [#1][i1]
 
 
-[i1]: [https://github.com/jvalue/2023-amse-template/issues/1](https://github.com/jvalue/2023-amse-template/issues/14)
+[i1]: [https://github.com/jvalue/2023-amse-template/issues/14]
 
