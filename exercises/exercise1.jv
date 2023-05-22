@@ -2,7 +2,7 @@ pipeline AirportPipeline {
  block DataExtractor oftype HttpExtractor { url: "https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/rhein-kreis-neuss-flughafen-weltweit/exports/csv"; }
  block AirportsTextFileInterpreter oftype TextFileInterpreter {}
  block AirportsCSVInterpreter oftype CSVInterpreter { delimiter: ";"; }
- block AirportsTableInterpreter oftype TableInterpreter {
+ block AirportTableInterpreter oftype TableInterpreter {
  header: true;
  columns: [
  "column_1" oftype integer,
@@ -24,6 +24,6 @@ pipeline AirportPipeline {
  DataExtractor
  ->AirportsTextFileInterpreter
  ->AirportsCSVInterpreter
- ->AirportsTableInterpreter
+ ->AirportTableInterpreter
  ->DatabaseLoader;
 }
