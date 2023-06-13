@@ -35,9 +35,9 @@ jobs:
       # Run Code Format check
       - name: Set execute permissions
         run:
-         chmod +x ./project/test.sh
+         chmod +x /project/test.sh
 
       # Run testcases
       - name: Run test.sh
         run: |
-          ./project/test.sh
+          /project/test.sh
