@@ -35,6 +35,10 @@ jobs:
       - name: Set execute permissions
         run:
          chmod +x ./project/test.sh
+         
+      #Check repository contents   
+      - name: List repository contents
+        run: ls -R
 
       # Run testcases
       - name: Run test.sh
