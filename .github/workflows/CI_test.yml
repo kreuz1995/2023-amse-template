@@ -28,7 +28,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
           pip install pandas
           pip install sqlalchemy
 
@@ -40,4 +39,4 @@ jobs:
       # Run testcases
       - name: Run test.sh
         run: |
-          ./project/test.sh
+          ${GITHUB_WORKSPACE}/project/test.sh
