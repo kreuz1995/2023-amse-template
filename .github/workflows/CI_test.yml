@@ -39,4 +39,4 @@ jobs:
       # Run testcases
       - name: Run test.sh
         run: |
-             ./2023-amse-template/project/test.sh
+             ./project/test.sh
