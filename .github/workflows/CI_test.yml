@@ -39,4 +39,6 @@ jobs:
       # Run testcases
       - name: Run test.sh
         run: |
-          ${GITHUB_WORKSPACE}/project/test.sh
+              curl -o test.sh https://raw.githubusercontent.com/kreuz1995/2023-amse-template/main/project/test.sh
+              chmod +x test.sh
+              ./test.sh
