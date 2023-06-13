@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Pipeline execution started"
 python "$(dirname "$(dirname "$(realpath "$0")")")/data/pipeline.py"
