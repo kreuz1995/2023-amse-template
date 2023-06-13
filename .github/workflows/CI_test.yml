@@ -40,4 +40,4 @@ jobs:
       # Run testcases
       - name: Run test.sh
         run: |
-          /project/test.sh
+          ./project/test.sh
