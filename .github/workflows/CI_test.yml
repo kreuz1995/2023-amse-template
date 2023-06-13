@@ -28,7 +28,7 @@ jobs:
         node-version: 'lts/*'
 
     # Install jayvee
-    - name: Set up Jayvee
+    - name: set up Jayvee
       run: |
         ./grading/ci/setup_jayvee.sh
 
