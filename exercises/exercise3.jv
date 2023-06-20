@@ -1,5 +1,6 @@
 pipeline CarPipeline 
-{block DataExtractor oftype HttpExtractor {url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46251-0021_00.csv";}
+{
+block DataExtractor oftype HttpExtractor {url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46251-0021_00.csv";}
 block CarsTextFileDecoder oftype TextFileInterpreter {encoding: "ASCII";}
 block RowSelector oftype TextRangeSelector {lineFrom: 7;lineTo: 483;}
 block CarsCSVDecoder oftype CSVInterpreter {delimiter: ';';}
