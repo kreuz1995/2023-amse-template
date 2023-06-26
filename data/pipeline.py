@@ -3,9 +3,8 @@ import requests
 import sqlite3
 import pandas as pd
 
-
 #-------------------------------------------------------------------------------------------------------------------------------
-#1st Data Source
+# 1st Data Source
 #-------------------------------------------------------------------------------------------------------------------------------
 
 # Fetch the JSON data
@@ -40,7 +39,6 @@ for entry in data:
 
 conn.commit()
 
-
 #-----------------------------------------------------------------------------------------------------------------------
 #2nd data source
 #-----------------------------------------------------------------------------------------------------------------------
@@ -72,5 +70,38 @@ conn = sqlite3.connect('my_database.db')
 df.to_sql('Location_Traffic_Accidents', conn, if_exists='replace', index=False)
 
 conn.commit()
-# Close the connection
+
+#-------------------------------------------------------------------------------------------------------------------------------
+# Data Transformation and Export
+#-------------------------------------------------------------------------------------------------------------------------------
+
+# Read the table 'Location_Traffic_Accidents' from the database into a DataFrame
+df = pd.read_sql_table('Location_Traffic_Accidents', 'sqlite:///my_database.db')
+df_road_signs = pd.read_sql_table('Location_Traffic_Signs', 'sqlite:///my_database.db')
+
+# Perform transformations on the DataFrame
+df = df[['UWOCHENTAG', 'UKATEGORIE', 'XGCSWGS84', 'YGCSWGS84']].rename(columns={'UWOCHENTAG': 'Day_of_the_Week', 'UKATEGORIE': 'Categorie_of_the_accident', 'XGCSWGS84': 'Longitude', 'YGCSWGS84': 'Latitude'})
+df = df.loc[:, ~df.columns.duplicated()]
+mapping = {1: 'Accident_with_Fatalities', 2: 'Accident_with_serious_injuries', 3: 'Accident_with_minor_injuries'}
+df['Categorie_of_the_accident'] = df['Categorie_of_the_accident'].map(mapping)
+
+# Replace commas with decimal points in latitude and longitude columns
+df['Latitude'] = df['Latitude'].str.replace(',', '.').astype(float)
+df['Longitude'] = df['Longitude'].str.replace(',', '.').astype(float)
+
+# Round latitude and longitude columns to 3 decimal places
+df['Latitude'] = df['Latitude'].round(3)
+df['Longitude'] = df['Longitude'].round(3)
+
+# Export the updated DataFrame to the database table 'Location_Traffic_Accidents'
+df.to_sql('Location_Traffic_Accidents', conn, if_exists='replace', index=False)
+
+df_road_signs=df_road_signs[['type', 'longitude','latitude']]
+
+# Round latitude and longitude columns to 4 decimal places
+df_road_signs['latitude'] = df_road_signs['latitude'].round(4)
+df_road_signs['longitude'] = df_road_signs['longitude'].round(4)
+df_road_signs.to_sql('Location_Traffic_Signs', conn, if_exists='replace', index=False)
+
+conn.commit()
 conn.close()
