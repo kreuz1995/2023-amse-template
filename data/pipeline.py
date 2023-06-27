@@ -1,3 +1,4 @@
+!pip install 'SQLAlchemy==1.4.46'
 import json
 import requests
 import sqlite3
