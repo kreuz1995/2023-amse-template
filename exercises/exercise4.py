@@ -36,8 +36,8 @@ temp_valid = df["Temperatur"].between(*valid_temp_range)
 df = df[temp_valid]
 
 # Batterietemperatur Validation
-valid_battery_range = df["Batterietemperatur"].between(*valid_temp_range)
-df = df[valid_battery_range]
+valid_battery_rang = df["Batterietemperatur"].between(*valid_temp_range)
+df = df[valid_battery_rang]
 
 # 5: Use fitting SQLite types & Write data into SQLite database
 df.to_sql('temperatures', 'sqlite:///temperatures.sqlite', if_exists='replace', index=False, dtype={
