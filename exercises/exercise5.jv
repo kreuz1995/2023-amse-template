@@ -3,12 +3,12 @@ pipeline GtfsPipeline {
 		url: "https://gtfs.rhoenenergie-bus.de/GTFS.zip";
 	}
 
-       block GtfsArchiveInterpreter oftype ArchiveInterpreter {
+    block GtfsArchiveInterpreter oftype ArchiveInterpreter {
 		archiveType: "zip";
 	}
 
 	block GtfsFilePicker oftype FilePicker {
-		paths: "/stops.txt";
+		path: "/stops.txt";
 	}
 
 	block GtfsTextFileInterpreter oftype TextFileInterpreter {
@@ -34,7 +34,7 @@ pipeline GtfsPipeline {
 
 	constraint Zone_2001 oftype RangeConstraint{
 		lowerBound: 2001;
-    	        upperBound: 2001;
+    	upperBound: 2001;
 	}
 
 	block GtfsTableInterpreter oftype TableInterpreter {
